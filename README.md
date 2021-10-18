@@ -6,6 +6,8 @@ Config at the top of the file allows you to set what variants to use.
 ### Why?
 Images is a new product from Cloudflare that allows you to upload images onto their CDN without needing a S3 bucket. It also comes with the ability to setup variants to make it easier for different sizes. Combining ShareX's ease of use with Image's speed and file-size optimizations, you can cut down on your screenshot folder's size pretty nicely.
 
+This does require an active subscription to Images, as well as an API key that can edit images.
+
 ### How?
 While it is possible to directly upload to CF images via ShareX, we use a Worker solution here to allow for an extra layer of security + portability.
 
