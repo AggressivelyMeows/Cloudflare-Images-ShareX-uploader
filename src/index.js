@@ -55,7 +55,7 @@ async function handleRequest(request) {
         const destination = `https://api.cloudflare.com/client/v4/accounts/${CONFIG.account_id}/images/v1`
 
         const data = new FormData()
-        data.append('file', file, filename)
+        data.append('file', file, `${new Date().getMonth()}/${filename}`)
 
         const resp = await fetch(destination, {
             method: 'POST',
@@ -96,7 +96,7 @@ async function handleRequest(request) {
 
     return response.json({
         "Version": "0.1.2",
-        "Name": "Cloudflare Images ShareX",
+        "Name": "☁ Cloudflare Images",
         "DestinationType": "ImageUploader",
         "RequestMethod": "POST",
         "RequestURL": `https://${host}/v1/upload/$filename$`,
