@@ -1,0 +1,16 @@
+name = "sharex-to-cf-images"
+type = "webpack"
+account_id = "2dcc5a4f486a50625b4167e90d113158"
+workers_dev = true
+route = ""
+zone_id = ""
+
+compatibility_date = "2021-10-18"
+compatibility_flags = [ "formdata_parser_supports_files" ]
+
+[build]
+command = "npm run build"
+watch_dir = "src"
+
+[build.upload]
+format = "service-worker"
