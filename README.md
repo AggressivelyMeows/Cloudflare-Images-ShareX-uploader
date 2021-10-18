@@ -8,6 +8,24 @@ Images is a new product from Cloudflare that allows you to upload images onto th
 
 This does require an active subscription to Images, as well as an API key that can edit images.
 
+### How to setup
+You need to publish this Worker to your account by doing `npm run publish`. This will create a Worker that is now ready to upload images.
+
+#### Adding secrets to Wrangler
+This Worker relies on 3 secrets, `KEY`, `ACCOUNT_ID`, and `ACCOUNT_TOKEN`. Key is *your* key to access this Worker. The key you will use to add it to your custom destinations or upload directly. `ACCOUNT_ID` is your Cloudflare account ID, and `ACCOUNT_TOKEN` is an API key with the `Cloudflare Images: edit` permission. You can set these by running:
+`wrangler secret put KEY/ACCOUNT_ID/ACCOUNT_TOKEN`
+
+#### Adding this Worker to ShareX
+![](https://imagedelivery.net/ClicBPYgmKg9AnDnGePOxg/2e5be0bf-b331-4518-a86d-d717e4247100/public)
+
+You need to open up the custom destinations menu by clicking these menu items. Once you have the menu open, you can click `Import by URL`:
+![](https://imagedelivery.net/ClicBPYgmKg9AnDnGePOxg/005cd307-6355-499b-3f46-c923d9310600/public)
+
+You type in your Worker url along with `?key=<your-secret-key>`:
+![](https://imagedelivery.net/ClicBPYgmKg9AnDnGePOxg/0961a40b-a22d-43fb-cf8b-7abe73662000/public)
+
+Now you should see something like this, if you do, congrats you can now upload straight to images via ShareX!
+
 ### How?
 While it is possible to directly upload to CF images via ShareX, we use a Worker solution here to allow for an extra layer of security + portability.
 
